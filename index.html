@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5eddc">
+<title>Rice & Soul — Hồn Gạo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5eddc;--cream2:#fbf7ec;--ink:#313126;--muted:#726f60;--olive:#abb31b;--olive-dark:#7e8710;--gold:#e7b52d;--earth:#a48d56;--line:#e4dac4;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--cream2);color:var(--ink);font-family:var(--sans);line-height:1.7}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit}.hidden{display:none!important}
+.splash{position:fixed;inset:0;z-index:100;background:radial-gradient(circle at 50% 35%,#fffdf7,var(--cream));display:grid;place-items:center;padding:24px;transition:.7s}.splash.out{opacity:0;visibility:hidden}.gift{text-align:center;max-width:780px}.mini-brand{font:700 12px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--olive-dark)}.gift-kicker{margin:42px 0 20px;font-size:11px;letter-spacing:.2em;color:var(--earth);font-weight:700}.gift h1{font:500 clamp(31px,5vw,58px)/1.22 var(--serif);margin:0 auto;max-width:760px}.gift-note{font-size:13px;color:var(--muted);margin-top:20px}.gift-mark{font:38px var(--serif);color:var(--gold);margin-top:22px}
+.btn{border:0;border-radius:2px;padding:13px 21px;background:var(--olive-dark);color:#fff;font-weight:700;transition:.25s}.btn:hover{transform:translateY(-3px);background:var(--ink)}.btn-light{background:transparent;color:var(--ink);border:1px solid var(--earth)}
+header{height:78px;position:sticky;top:0;z-index:30;background:#fbf7ecee;backdrop-filter:blur(14px);border-bottom:1px solid #e4dac488}.nav{width:min(1160px,90%);height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between}.logo{font:600 22px var(--serif);text-decoration:none}.logo small{display:block;font:700 8px var(--sans);letter-spacing:.27em;text-transform:uppercase;color:var(--olive-dark);margin-top:-7px}.navlinks{display:flex;gap:30px}.navlinks a{font-size:13px;text-decoration:none}.navlinks a:hover{color:var(--olive-dark)}.nav-actions{display:flex;gap:8px}.icon{border:1px solid var(--line);background:transparent;padding:8px 11px;color:var(--ink);border-radius:2px}.menu{display:none}
+.wrap{width:min(1160px,90%);margin:auto}.hero{min-height:625px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:65px 0 85px}.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive-dark);font-weight:700}.hero h1{font:600 clamp(48px,6.5vw,79px)/1.05 var(--serif);letter-spacing:-.055em;margin:17px 0 24px}.hero h1 em{font-weight:500;color:var(--olive-dark)}.hero-copy{max-width:510px;color:var(--muted);font-size:15px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.hero-art{height:470px;position:relative;display:grid;place-items:center}.sun{position:absolute;width:340px;height:340px;border-radius:50%;background:#e9dba9;right:2%;top:6%;opacity:.65}.art-card{width:300px;height:395px;position:relative;display:grid;place-items:center;background:linear-gradient(145deg,#faf2de,#d9c995);border:1px solid #c9b77e;box-shadow:22px 30px 60px #6d5d3125;transform:rotate(5deg)}.art-card:before{content:"";position:absolute;inset:13px;border:1px solid #b5a66e}.rice-symbol{font:170px var(--serif);color:#7f8422;transform:rotate(-15deg);text-shadow:5px 8px 2px #514a2733}.art-caption{position:absolute;bottom:34px;font:italic 13px var(--serif);color:#6e6240}.float{position:absolute;background:var(--cream2);padding:12px 17px;box-shadow:0 15px 32px #51482a20;font:italic 13px var(--serif)}.float.a{left:0;bottom:75px;transform:rotate(-6deg)}.float.b{right:0;top:45px;transform:rotate(5deg)}
+.statement{background:var(--ink);color:var(--cream);padding:72px 0;text-align:center}.statement small{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#c7bea0}.statement p{font:italic clamp(25px,3.5vw,43px)/1.5 var(--serif);max-width:920px;margin:14px auto 0}
+.section{padding:100px 0}.head{text-align:center;margin-bottom:43px}.head .eyebrow{display:block}.head h2{font:600 clamp(36px,4vw,53px)/1.15 var(--serif);margin:9px 0}.head p{margin:0;color:var(--muted)}.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:30px}.filter{border:1px solid var(--line);background:transparent;color:var(--muted);padding:8px 15px;border-radius:30px;font-size:12px}.filter.active,.filter:hover{background:var(--olive-dark);color:#fff;border-color:var(--olive-dark)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.visual{height:270px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#e8dfc8,#d7c69e);overflow:hidden;transition:.3s}.product:nth-child(2n) .visual{background:linear-gradient(145deg,#e7e7c8,#c4c89b)}.product:nth-child(3n) .visual{background:linear-gradient(145deg,#f3e4bd,#d7b978)}.visual:after{content:"";position:absolute;inset:12px;border:1px solid #ffffff77}.product:hover .visual{transform:translateY(-4px)}.symbol{font:100px var(--serif);color:#737a25;text-shadow:3px 6px 2px #504a2730}.product-info{padding:14px 2px}.product-info h3{font:500 19px var(--serif);margin:0}.product-info p{font-size:12px;color:var(--muted);margin:4px 0 11px}.product-bottom{display:flex;justify-content:space-between;align-items:center}.price{font-weight:700;font-size:14px}.add{border:1px solid var(--earth);background:transparent;padding:7px 11px;font-size:12px}.add:hover{background:var(--olive-dark);color:#fff}
+.cream-section{background:#eee6d3}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}.step{border-top:1px solid var(--earth);padding-top:17px}.step b{font:italic 30px var(--serif);color:var(--olive-dark)}.step h3{font:500 19px var(--serif);margin:7px 0}.step p{font-size:13px;color:var(--muted);margin:0}.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}.story-art{height:390px;display:grid;place-items:center;background:linear-gradient(145deg,#d5d5a6,#b5b77d);font-size:145px;color:#68721c}.story h2{font:600 46px/1.2 var(--serif);margin:12px 0 20px}.story p{color:var(--muted)}footer{background:var(--ink);color:var(--cream);padding:55px 0 25px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}.footer-grid p,.footer-grid a{color:#c5bd9f;font-size:13px}.footer-grid a{display:block;text-decoration:none;margin:5px 0}.copyright{border-top:1px solid #5b594c;margin-top:35px;padding-top:20px;color:#aaa58f;font-size:11px}
+.overlay{position:fixed;inset:0;background:#17170f88;z-index:60;display:flex;justify-content:flex-end}.drawer{width:min(470px,100%);height:100%;background:var(--cream2);padding:24px;overflow:auto}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:14px}.drawer h2{font:500 28px var(--serif);margin:0}.close{border:0;background:none;font-size:26px}.cart-row{display:flex;justify-content:space-between;gap:15px;padding:17px 0;border-bottom:1px solid var(--line)}.cart-row small{display:block;color:var(--muted)}.qty button{border:1px solid var(--line);background:none;padding:2px 8px}.total{display:flex;justify-content:space-between;font-weight:700;padding:20px 0}.field{display:grid;gap:5px;margin:12px 0}.field label{font-size:12px;color:var(--muted)}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);background:#fff;padding:10px;color:var(--ink);border-radius:2px}.admin-block{background:#f0e8d7;padding:18px;margin-top:22px}.admin-block h3{font:22px var(--serif);margin:0 0 8px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,25px);opacity:0;z-index:90;background:var(--ink);color:#fff;padding:11px 17px;font-size:13px;transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.navlinks{display:none;position:absolute;top:77px;left:0;right:0;background:var(--cream2);padding:20px 5%;flex-direction:column;gap:14px;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.menu{display:block}.hero{grid-template-columns:1fr}.hero-art{height:390px}.grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.story{gap:35px}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.wrap{width:88%}.logo{font-size:19px}.hero{padding:48px 0}.hero h1{font-size:49px}.hero-art{height:330px}.art-card{width:230px;height:300px}.rice-symbol{font-size:125px}.sun{width:250px;height:250px}.float{font-size:11px;padding:9px 11px}.float.a{left:-8px}.float.b{right:-8px}.section{padding:70px 0}.grid{gap:12px}.visual{height:190px}.symbol{font-size:74px}.product-info h3{font-size:16px}.steps{gap:20px}.story{grid-template-columns:1fr}.story-art{height:270px}.story h2{font-size:38px}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="splash" id="splash">
+  <div class="gift">
+    <div class="mini-brand">Rice & Soul · Hồn Gạo</div>
+    <div class="gift-kicker">MỘT MÓN QUÀ NHỎ DÀNH CHO BẠN</div>
+    <h1 id="giftMessage">Đang chuẩn bị một lời nhắn dành riêng cho bạn…</h1>
+    <div class="gift-note">Một lời nhắn từ Rice & Soul</div>
+    <button class="btn" id="enter" style="margin-top:25px">Nhận món quà & Khám phá →</button>
+    <div class="gift-mark">✳</div>
+  </div>
+</div>
+
+<header>
+<nav class="nav">
+  <a class="logo" href="#">Rice & Soul<small>Hồn Gạo</small></a>
+  <div class="navlinks" id="navlinks">
+    <a href="#story">Câu chuyện</a><a href="#collection">Bộ sưu tập</a><a href="#craft">Chế tác</a><a href="#heritage">Di sản</a>
+  </div>
+  <div class="nav-actions">
+    <button class="icon" id="cartBtn">Giỏ hàng <span id="cartCount">0</span></button>
+    <button class="icon" id="adminBtn">Quản trị</button>
+    <button class="icon menu" id="menuBtn">☰</button>
+  </div>
+</nav>
+</header>
+
+<main>
+<section class="wrap hero">
+  <div>
+    <div class="eyebrow">Thủ công · Bản sắc · Kỷ niệm</div>
+    <h1>Việt Nam<br>trong từng<br><em>hạt gạo.</em></h1>
+    <p class="hero-copy">Từ hạt gạo thân quen của miền sông nước, Rice & Soul gửi gắm những câu chuyện quê hương vào món quà nhỏ bạn có thể mang theo mỗi ngày.</p>
+    <div class="actions"><a class="btn" href="#collection" style="text-decoration:none">Khám phá bộ sưu tập</a><a class="btn btn-light" href="#story" style="text-decoration:none">Câu chuyện của chúng tôi</a></div>
+  </div>
+  <div class="hero-art">
+    <div class="sun"></div>
+    <div class="art-card"><div class="rice-symbol">❧</div><div class="art-caption">Gửi hồn quê trong hạt gạo</div></div>
+    <div class="float a">Một hạt nhỏ, ngàn thương nhớ</div><div class="float b">Made with care ♡</div>
+  </div>
+</section>
+
+<section class="statement"><div class="wrap"><small>Tuyên ngôn Rice & Soul</small><p>“Từ cánh đồng mênh mang đến một món quà nằm gọn trong lòng bàn tay — để quê hương luôn ở bên bạn.”</p></div></section>
+
+<section class="section wrap" id="collection">
+  <div class="head"><span class="eyebrow">Những câu chuyện được tạo tác</span><h2>Bộ sưu tập</h2><p>Mỗi chiếc móc khóa là một lát cắt nhỏ của ký ức Việt.</p></div>
+  <div class="filters" id="filters"></div><div class="grid" id="products"></div>
+</section>
+
+<section class="section cream-section" id="craft">
+<div class="wrap"><div class="head"><span class="eyebrow">Từ bàn tay người thợ</span><h2>Nghệ thuật chế tác</h2><p>Chậm rãi trong từng công đoạn, nâng niu trong từng chi tiết.</p></div>
+<div class="steps">
+<div class="step"><b>01</b><h3>Chọn hạt gạo</h3><p>Tuyển chọn những hạt gạo có dáng đẹp và bề mặt phù hợp để tạo tác.</p></div>
+<div class="step"><b>02</b><h3>Vẽ và khắc</h3><p>Khắc chữ hoặc vẽ những hình ảnh thu nhỏ bằng sự tỉ mỉ và kiên nhẫn.</p></div>
+<div class="step"><b>03</b><h3>Phủ lớp bảo vệ</h3><p>Hoàn thiện bề mặt bằng lớp phủ trong suốt để lưu giữ tác phẩm.</p></div>
+<div class="step"><b>04</b><h3>Trao gửi yêu thương</h3><p>Lắp móc khóa, kiểm tra thành phẩm và chuẩn bị gói ghém món quà.</p></div>
+</div></div></section>
+
+<section class="section wrap story" id="story"><div class="story-art">🌾</div><div><div class="eyebrow">Câu chuyện thương hiệu</div><h2>Hồn quê trong điều giản dị.</h2><p>Rice & Soul bắt đầu từ tình yêu dành cho hạt gạo — món quà của đất, nước và bao bàn tay cần mẫn. Chúng tôi tin rằng một vật nhỏ bé vẫn có thể chuyên chở ký ức lớn lao.</p><p>Mỗi sản phẩm là lời nhắc về cội nguồn, về miền quê thân thuộc và về vẻ đẹp được tạo nên từ sự kiên nhẫn. Không chỉ là một chiếc móc khóa, đó còn là một câu chuyện bạn có thể mang theo.</p></div></section>
+
+<section class="section cream-section" id="heritage"><div class="wrap head"><span class="eyebrow">Di sản văn minh lúa nước</span><h2>Gìn giữ bằng đôi tay hôm nay.</h2><p>Từ cảm hứng miền sông nước, hình ảnh lúa và ký ức quê hương được kể lại qua ngôn ngữ thủ công đương đại — gần gũi, tinh tế và đầy tự hào.</p></div></section>
+</main>
+
+<footer><div class="wrap"><div class="footer-grid"><div><div class="logo">Rice & Soul<small>Hồn Gạo</small></div><p>Một hạt gạo, một câu chuyện. Một món quà mang theo hồn Việt.</p></div><div><strong>Khám phá</strong><a href="#collection">Bộ sưu tập</a><a href="#craft">Nghệ thuật chế tác</a><a href="#story">Về Rice & Soul</a></div><div><strong>Kết nối</strong><p>Email: hello@riceandsoul.vn<br>Facebook · Instagram</p></div></div><div class="copyright">© 2026 Rice & Soul. Được tạo nên bằng sự trân trọng dành cho hạt gạo Việt.</div></div></footer>
+
+<div class="overlay hidden" id="cartOverlay"><aside class="drawer"><div class="drawer-head"><h2>Giỏ hàng của bạn</h2><button class="close" data-close="cartOverlay">×</button></div><div id="cartItems"></div><div class="total"><span>Tạm tính</span><span id="cartTotal">0 ₫</span></div>
+<form id="checkout"><h3>Thông tin nhận hàng</h3><div class="field"><label>Họ và tên</label><input name="name" required></div><div class="field"><label>Số điện thoại</label><input name="phone" required></div><div class="field"><label>Địa chỉ</label><textarea name="address" required rows="2"></textarea></div><div class="field"><label>Ghi chú</label><textarea name="note" rows="2"></textarea></div><button class="btn" style="width:100%">Đặt hàng (mô phỏng)</button></form></aside></div>
+
+<div class="overlay hidden" id="adminOverlay"><aside class="drawer"><div class="drawer-head"><h2>Quản trị</h2><button class="close" data-close="adminOverlay">×</button></div><p style="font-size:12px;color:var(--muted)">Prototype: dữ liệu được lưu trong trình duyệt này.</p>
+<form id="productForm"><input type="hidden" name="id"><div class="field"><label>Tên sản phẩm</label><input name="name" required></div><div class="field"><label>Giá (VNĐ)</label><input name="price" type="number" min="0" required></div><div class="field"><label>Danh mục</label><select name="category"><option>Bản đồ</option><option>Sen vàng</option><option>Nón lá</option><option>Biểu tượng</option></select></div><div class="field"><label>Ký hiệu minh họa</label><input name="symbol" placeholder="🌾"></div><div class="field"><label>Mô tả</label><textarea name="description" rows="2"></textarea></div><button class="btn" style="width:100%">Lưu sản phẩm</button></form>
+<div class="admin-block"><h3>Sản phẩm hiện có</h3><div id="adminProducts"></div></div><div class="admin-block"><h3>Đơn hàng gần đây</h3><div id="adminOrders"></div></div></aside></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const defaultProducts=[
+{id:1,name:"Bản Đồ Quê Hương",category:"Bản đồ",price:89000,symbol:"⌁",description:"Dáng hình đất nước gửi trong hạt gạo."},
+{id:2,name:"Búp Sen Vàng",category:"Sen vàng",price:79000,symbol:"❀",description:"Vẻ đẹp thanh khiết của đóa sen Việt."},
+{id:3,name:"Nón Lá & Đồng Xanh",category:"Nón lá",price:85000,symbol:"△",description:"Một miền quê yên ả trong sắc lúa non."},
+{id:4,name:"Ngôi Sao Hy Vọng",category:"Biểu tượng",price:69000,symbol:"✳",description:"Lời nhắn nhỏ về những ước mơ lớn."}
+];
+const money=n=>new Intl.NumberFormat("vi-VN").format(n)+" ₫";
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let products=JSON.parse(localStorage.getItem("rs_products")||"null")||defaultProducts;
+let cart=JSON.parse(localStorage.getItem("rs_cart")||"[]");
+let orders=JSON.parse(localStorage.getItem("rs_orders")||"[]");
+let filter="Tất cả";
+const save=()=>{localStorage.setItem("rs_products",JSON.stringify(products));localStorage.setItem("rs_cart",JSON.stringify(cart));localStorage.setItem("rs_orders",JSON.stringify(orders))};
+function toast(m){const t=document.querySelector("#toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200)}
+function renderFilters(){const cats=["Tất cả",...new Set(products.map(p=>p.category))];document.querySelector("#filters").innerHTML=cats.map(c=>`<button class="filter ${filter===c?"active":""}" data-filter="${esc(c)}">${esc(c)}</button>`).join("")}
+function renderProducts(){renderFilters();const list=products.filter(p=>filter==="Tất cả"||p.category===filter);document.querySelector("#products").innerHTML=list.map(p=>`<article class="product"><div class="visual"><div class="symbol">${esc(p.symbol||"✳")}</div></div><div class="product-info"><h3>${esc(p.name)}</h3><p>${esc(p.description||"Món quà thủ công từ Rice & Soul.")}</p><div class="product-bottom"><span class="price">${money(p.price)}</span><button class="add" data-add="${p.id}">Thêm +</button></div></div></article>`).join("")||"<p>Chưa có sản phẩm trong danh mục này.</p>"}
+function renderCart(){document.querySelector("#cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0);document.querySelector("#cartItems").innerHTML=cart.map(x=>{const p=products.find(p=>p.id===x.id);return p?`<div class="cart-row"><div><strong>${esc(p.name)}</strong><small>${money(p.price)} · ${money(p.price*x.qty)}</small></div><div class="qty"><button data-qty="${p.id}" data-delta="-1">−</button> ${x.qty} <button data-qty="${p.id}" data-delta="1">+</button></div></div>`:""}).join("")||"<p>Giỏ hàng đang trống.</p>";document.querySelector("#cartTotal").textContent=money(cart.reduce((s,x)=>s+(products.find(p=>p.id===x.id)?.price||0)*x.qty,0))}
+function renderAdmin(){document.querySelector("#adminProducts").innerHTML=products.map(p=>`<div class="cart-row"><div><strong>${esc(p.name)}</strong><small>${money(p.price)}</small></div><div><button class="icon" data-edit="${p.id}">Sửa</button> <button class="icon" data-delete="${p.id}">Xóa</button></div></div>`).join("");document.querySelector("#adminOrders").innerHTML=orders.map(o=>`<div class="cart-row"><div><strong>${esc(o.name)} · ${money(o.total)}</strong><small>${esc(o.phone)}<br>${esc(o.address)}</small></div></div>`).join("")||"<p>Chưa có đơn hàng.</p>"}
+
+document.addEventListener("click",e=>{
+ const f=e.target.closest("[data-filter]"); if(f){filter=f.dataset.filter;renderProducts()}
+ const a=e.target.closest("[data-add]"); if(a){const id=Number(a.dataset.add),x=cart.find(x=>x.id===id);x?x.qty++:cart.push({id,qty:1});save();renderCart();toast("Đã thêm vào giỏ hàng.")}
+ const q=e.target.closest("[data-qty]"); if(q){const x=cart.find(x=>x.id===Number(q.dataset.qty));if(x)x.qty+=Number(q.dataset.delta);cart=cart.filter(x=>x.qty>0);save();renderCart()}
+ const d=e.target.closest("[data-delete]"); if(d){products=products.filter(p=>p.id!==Number(d.dataset.delete));cart=cart.filter(x=>products.some(p=>p.id===x.id));save();renderProducts();renderCart();renderAdmin();toast("Đã xóa sản phẩm.")}
+ const ed=e.target.closest("[data-edit]"); if(ed){const p=products.find(p=>p.id===Number(ed.dataset.edit)),f=document.querySelector("#productForm");Object.keys(p).forEach(k=>{if(f.elements[k])f.elements[k].value=p[k]});f.scrollIntoView({behavior:"smooth"})}
+ const c=e.target.closest("[data-close]"); if(c)document.querySelector("#"+c.dataset.close).classList.add("hidden")
+});
+document.querySelector("#cartBtn").onclick=()=>document.querySelector("#cartOverlay").classList.remove("hidden");
+document.querySelector("#adminBtn").onclick=()=>{renderAdmin();document.querySelector("#adminOverlay").classList.remove("hidden")};
+document.querySelector("#menuBtn").onclick=()=>document.querySelector("#navlinks").classList.toggle("open");
+
+document.querySelector("#checkout").onsubmit=e=>{
+ e.preventDefault(); if(!cart.length)return toast("Giỏ hàng đang trống.");
+ const fd=new FormData(e.target),total=cart.reduce((s,x)=>s+(products.find(p=>p.id===x.id)?.price||0)*x.qty,0);
+ orders.unshift({name:fd.get("name"),phone:fd.get("phone"),address:fd.get("address"),note:fd.get("note"),total,items:cart,createdAt:new Date().toISOString()});
+ cart=[];save();renderCart();renderAdmin();e.target.reset();toast("Đặt hàng thành công — đây là bản mô phỏng.");
+};
+document.querySelector("#productForm").onsubmit=e=>{
+ e.preventDefault();const f=e.target,id=Number(f.elements.id.value);
+ const p={id:id||Date.now(),name:f.elements.name.value.trim(),price:Number(f.elements.price.value),category:f.elements.category.value,symbol:f.elements.symbol.value.trim()||"✳",description:f.elements.description.value.trim()};
+ if(id)products=products.map(x=>x.id===id?p:x);else products.push(p);
+ save();f.reset();f.elements.id.value="";renderProducts();renderAdmin();toast("Đã lưu sản phẩm.")
+};
+async function loadGift(){
+ try{const r=await fetch("/api/message",{cache:"no-store"});if(!r.ok)throw Error();document.querySelector("#giftMessage").textContent=(await r.json()).message}
+ catch{const a=["Mong bạn luôn tìm thấy một khoảng trời bình yên, ngay cả trong những ngày nhiều mây nhất.","Chúc bạn đủ dịu dàng với bản thân và đủ can đảm để bắt đầu lại.","Đôi khi, những điều nhỏ bé lại giữ trong mình sức mạnh lớn lao."];document.querySelector("#giftMessage").textContent=a[Math.floor(Math.random()*a.length)]}
+}
+document.querySelector("#enter").onclick=()=>{document.querySelector("#splash").classList.add("out");setTimeout(()=>document.querySelector("#splash").remove(),700)};
+loadGift();renderProducts();renderCart();
+</script>
+</body>
+</html>

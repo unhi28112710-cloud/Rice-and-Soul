@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/api/message", "destination": "/api/message.js" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
