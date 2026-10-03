@@ -200,15 +200,13 @@ footer{background:var(--ink);color:var(--cream);padding:56px 0 24px}
 .field input,.field textarea,.field select{font-size:16px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-.tabs{display:flex;gap:8px;margin:16px 0 4px}.tabs .filter{flex:1}
-.order{border-bottom:1px solid var(--line);padding:14px 0}
-.order-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
-.order small{display:block;color:var(--muted);margin:4px 0 8px}
-.order ul{margin:6px 0 10px;padding-left:18px;font-size:14px}
-.order select{border:1px solid var(--line);background:#fff;padding:7px;border-radius:3px;max-width:100%}
-.badge{font-size:12px;font-weight:600;padding:2px 10px;border-radius:30px;background:var(--sand);white-space:nowrap}
-.s0{background:#f3e4bd}.s1{background:#dfe5b8}.s2{background:#cfe0d4}.s3{background:var(--olive);color:#fff}.s4{background:#e6d2cc;color:#7a3b2e}
-.err{color:#a3392b;font-size:14px;min-height:22px;margin:6px 0 0}
+.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.team-card{background:var(--paper,#fffaf0);border:1px solid var(--line);padding:26px;border-radius:18px;min-height:190px}
+.team-role{display:inline-block;color:var(--olive);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.team-card h3{font-family:var(--heading);font-size:1.35rem;margin:0 0 10px}
+.team-card p{color:var(--muted);line-height:1.75;margin:0}
+@media(max-width:800px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.team-grid{grid-template-columns:1fr}.team-card{padding:22px}}
 </style>
 </head>
 <body>
@@ -230,8 +228,7 @@ footer{background:var(--ink);color:var(--cream);padding:56px 0 24px}
       <a href="#story">Câu chuyện</a><a href="#collection">Bộ sưu tập</a><a href="#craft">Chế tác</a><a href="#heritage">Di sản</a>
     </div>
     <div class="nav-actions">
-      <button class="icon" id="accBtn" type="button">Đăng nhập</button>
-      <button class="icon" id="cartBtn" type="button" aria-label="Mở giỏ hàng">Giỏ hàng (<span id="cartCount">0</span>)</button>
+      <a class="btn btn-small" href="https://www.facebook.com/Rice.and.Soul/" target="_blank" rel="noopener noreferrer">Kết nối Facebook</a>
       <button class="icon menu" id="menuBtn" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="navlinks">☰</button>
     </div>
   </nav>
@@ -317,66 +314,28 @@ footer{background:var(--ink);color:var(--cream);padding:56px 0 24px}
 </section>
 </main>
 
+<section class="section wrap team" id="team">
+<div class="head"><span class="eyebrow">Những người đứng sau Rice & Soul</span><h2>Đội ngũ thành viên</h2><p>Mỗi thành viên góp một phần chuyên môn và tâm huyết để kể câu chuyện Việt Nam qua từng hạt gạo.</p></div>
+<div class="team-grid">
+<article class="team-card"><span class="team-role">CEO · Điều hành dự án</span><h3>Nguyễn Thị Ngân Xuyến</h3><p>Quản lý, điều phối và định hướng dự án; phân công công việc, theo dõi tiến độ, quản lý ngân sách và kết nối các thành viên.</p></article>
+<article class="team-card"><span class="team-role">CTO · Công nghệ</span><h3>Nguyễn Lê Uyển Nhi</h3><p>Phát triển và quản lý website, bảo mật tài khoản và dữ liệu, hỗ trợ hệ thống bán hàng, mã QR và xử lý vấn đề kỹ thuật.</p></article>
+<article class="team-card"><span class="team-role">CPO · Sản phẩm</span><h3>Nguyễn Vũ Nhật Hà</h3><p>Tạo mẫu, thử nghiệm và phát triển móc khóa từ hạt gạo và epoxy; kiểm tra chất lượng, phối hợp hoàn thiện thiết kế và bao bì.</p></article>
+<article class="team-card"><span class="team-role">CMO · Marketing</span><h3>Lê Gia Tiến</h3><p>Xây dựng và quản lý Fanpage Facebook, lập kế hoạch truyền thông, sáng tạo nội dung và theo dõi phản hồi khách hàng.</p></article>
+<article class="team-card"><span class="team-role">CDO · Thiết kế</span><h3>Phạm Hoàng Lâm</h3><p>Thiết kế logo, hình ảnh và nhận diện thương hiệu; phát triển giao diện website, mẫu sản phẩm, bao bì và hình ảnh truyền thông.</p></article>
+<article class="team-card"><span class="team-role">CBO · Kinh doanh</span><h3>Lê Vũ Thiên Anh</h3><p>Nghiên cứu thị trường, khách hàng và đối thủ; tính chi phí, xây dựng giá bán, quản lý ngân sách, đơn hàng, doanh thu và hoạt động bán hàng.</p></article>
+</div></section>
+
 <footer>
   <div class="wrap">
     <div class="footer-grid">
       <div><div class="logo"><span class="mark" aria-hidden="true"></span><span>Rice & Soul<small>Hồn Gạo</small></span></div><p>Một hạt gạo, một câu chuyện. Một món quà mang theo hồn Việt.</p></div>
-      <div><strong>Khám phá</strong><a href="#collection">Bộ sưu tập</a><a href="#craft">Nghệ thuật chế tác</a><a href="#story">Về Rice & Soul</a></div>
-      <div><strong>Kết nối</strong><a href="mailto:hello@riceandsoul.vn">hello@riceandsoul.vn</a><a href="https://www.facebook.com/Rice.and.Soul" target="_blank" rel="noopener">Facebook</a></div>
+      <div><strong>Khám phá</strong><a href="#collection">Bộ sưu tập</a><a href="#craft">Nghệ thuật chế tác</a><a href="#story">Về Rice & Soul</a><a href="#team">Đội ngũ</a></div>
+      <div><strong>Kết nối</strong><a href="https://www.facebook.com/Rice.and.Soul/" target="_blank" rel="noopener noreferrer">Facebook Rice & Soul</a></div>
     </div>
-    <div class="copyright"><span>© 2026 Rice & Soul. Được tạo nên bằng sự trân trọng dành cho hạt gạo Việt.</span><button type="button" id="adminBtn">Quản trị</button></div>
+    <div class="copyright"><span>© 2026 Rice & Soul. Được tạo nên bằng sự trân trọng dành cho hạt gạo Việt.</span></div>
   </div>
 </footer>
 
-<div class="overlay" id="cartOverlay" hidden>
-  <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" tabindex="-1">
-    <div class="drawer-head"><h2 id="cartTitle">Giỏ hàng của bạn</h2><button class="close" type="button" data-close aria-label="Đóng giỏ hàng">×</button></div>
-    <div id="cartItems"></div>
-    <div class="total"><span>Tạm tính</span><span id="cartTotal">0 ₫</span></div>
-    <div class="admin-block" id="needLogin" hidden><p style="margin-top:0">Hãy đăng nhập để đặt hàng và theo dõi đơn của bạn.</p><button class="btn btn-block" type="button" id="goLogin">Đăng nhập / Đăng ký</button></div>
-    <form id="checkout">
-      <h3>Thông tin nhận hàng</h3>
-      <div class="field"><label for="c-name">Họ và tên</label><input id="c-name" name="name" autocomplete="name" required></div>
-      <div class="field"><label for="c-phone">Số điện thoại</label><input id="c-phone" name="phone" type="tel" autocomplete="tel" pattern="(0|\+84)[0-9]{9}" title="Ví dụ: 0912345678" required></div>
-      <div class="field"><label for="c-addr">Địa chỉ</label><textarea id="c-addr" name="address" rows="2" autocomplete="street-address" required></textarea></div>
-      <div class="field"><label for="c-note">Ghi chú</label><textarea id="c-note" name="note" rows="2"></textarea></div>
-      <button class="btn btn-block" type="submit">Đặt hàng (mô phỏng)</button>
-    </form>
-    <div class="done" id="done" hidden>
-      <h3>Đặt hàng thành công</h3>
-      <p>Mã đơn của bạn: <strong id="orderCode"></strong><br><span class="note">Đây là bản mô phỏng, chưa có thanh toán thật.</span></p>
-      <p>Bấm nút dưới đây để gửi đơn cho cửa hàng qua Messenger. Nội dung đơn sẽ được sao chép sẵn, bạn chỉ cần dán vào khung chat rồi gửi.</p>
-      <button class="btn btn-block" type="button" id="sendMsg">Gửi đơn qua Messenger</button>
-      <div class="field"><label for="orderText">Nội dung đơn (nếu không tự sao chép được, hãy chép tay)</label><textarea id="orderText" rows="7" readonly></textarea></div>
-      <button class="btn btn-light btn-block" type="button" data-close>Tiếp tục mua sắm</button>
-    </div>
-  </aside>
-</div>
-
-<div class="overlay" id="accOverlay" hidden>
-  <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="accTitle" tabindex="-1">
-    <div class="drawer-head"><h2 id="accTitle">Đăng nhập</h2><button class="close" type="button" data-close aria-label="Đóng">×</button></div>
-    <div id="authView"></div>
-    <div id="custView" hidden></div>
-    <div id="adminView" hidden>
-      <p class="note">Bản thử nghiệm: dữ liệu chỉ lưu trong trình duyệt này.</p>
-      <button class="icon" type="button" data-logout>Đăng xuất</button>
-      <div class="admin-block"><h3>Đơn hàng</h3><p class="note" id="orderStats"></p><div class="field"><label for="orderFilter">Lọc theo trạng thái</label><select id="orderFilter"></select></div><div id="adminOrders"></div></div>
-      <form id="productForm">
-      <h3 id="formTitle">Thêm sản phẩm</h3>
-      <input type="hidden" name="id">
-      <div class="field"><label for="p-name">Tên sản phẩm</label><input id="p-name" name="name" required></div>
-      <div class="field"><label for="p-price">Giá (VNĐ)</label><input id="p-price" name="price" type="number" min="0" step="1000" required></div>
-      <div class="field"><label for="p-cat">Danh mục</label><select id="p-cat" name="category"><option>Bản đồ</option><option>Sen vàng</option><option>Nón lá</option><option>Biểu tượng</option></select></div>
-      <div class="field"><label for="p-sym">Ký hiệu minh họa</label><input id="p-sym" name="symbol" placeholder="❀" maxlength="4"></div>
-      <div class="field"><label for="p-desc">Mô tả</label><textarea id="p-desc" name="description" rows="2"></textarea></div>
-      <button class="btn btn-block" type="submit">Lưu sản phẩm</button>
-      <button class="btn btn-light btn-block" type="button" id="cancelEdit" hidden style="margin-top:8px">Hủy chỉnh sửa</button>
-    </form>
-      <div class="admin-block"><h3>Sản phẩm hiện có</h3><div id="adminProducts"></div></div>
-    </div>
-  </aside>
-</div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -396,12 +355,8 @@ const store={
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}
 };
 let products=store.get("rs_products",null)||defaultProducts;
-let cart=store.get("rs_cart",[]);
-let orders=store.get("rs_orders",[]);
 let filter="Tất cả";
-const save=()=>{store.set("rs_products",products);store.set("rs_cart",cart);store.set("rs_orders",orders)};
-const lineTotal=x=>(products.find(p=>p.id===x.id)?.price||0)*x.qty;
-const cartTotal=()=>cart.reduce((s,x)=>s+lineTotal(x),0);
+const save=()=>store.set("rs_products",products);
 
 let toastTimer;
 function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),2200)}
@@ -412,151 +367,22 @@ function renderProducts(){
   if(!cats.includes(filter))filter="Tất cả";
   $("#filters").innerHTML=cats.map(c=>`<button class="filter" type="button" aria-pressed="${filter===c}" data-filter="${esc(c)}">${esc(c)}</button>`).join("");
   const list=products.filter(p=>filter==="Tất cả"||p.category===filter);
-  $("#products").innerHTML=list.map(p=>`<article class="product"><div class="visual" aria-hidden="true"><div class="grain"><span>${esc(p.symbol||"✳")}</span></div></div><div class="product-info"><h3>${esc(p.name)}</h3><p>${esc(p.description||"Món quà thủ công từ Rice & Soul.")}</p><div class="product-bottom"><span class="price">${money(p.price)}</span><button class="add" type="button" data-add="${p.id}" aria-label="Thêm ${esc(p.name)} vào giỏ">Thêm vào giỏ</button></div></div></article>`).join("")||`<p class="empty">Chưa có sản phẩm trong danh mục này.</p>`;
+  $("#products").innerHTML=list.map(p=>`<article class="product"><div class="visual" aria-hidden="true"><div class="grain"><span>${esc(p.symbol||"✳")}</span></div></div><div class="product-info"><h3>${esc(p.name)}</h3><p>${esc(p.description||"Món quà thủ công từ Rice & Soul.")}</p><div class="product-bottom"><span class="price">${money(p.price)}</span><a class="add" href="https://www.facebook.com/Rice.and.Soul/" target="_blank" rel="noopener noreferrer">Liên hệ mua</a></div></div></article>`).join("")||`<p class="empty">Chưa có sản phẩm trong danh mục này.</p>`;
 }
-function renderCart(){
-  $("#cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0);
-  $("#cartItems").innerHTML=cart.map(x=>{
-    const p=products.find(p=>p.id===x.id);if(!p)return"";
-    return `<div class="cart-row"><div><strong>${esc(p.name)}</strong><small>${money(p.price)} × ${x.qty} = ${money(p.price*x.qty)}</small></div><div class="qty"><button type="button" data-qty="${p.id}" data-delta="-1" aria-label="Giảm số lượng ${esc(p.name)}">−</button><span aria-live="polite">${x.qty}</span><button type="button" data-qty="${p.id}" data-delta="1" aria-label="Tăng số lượng ${esc(p.name)}">+</button></div></div>`
-  }).join("")||`<p class="empty">Giỏ hàng đang trống. Hãy chọn một món quà từ bộ sưu tập.</p>`;
-  $("#cartTotal").textContent=money(cartTotal());
-}
-
-/* ===== Tài khoản: khách & quản trị ===== */
-let users=store.get("rs_users",[]),session=store.get("rs_session",null),authMode="login";
-const STATUS=["Chờ xác nhận","Đang chuẩn bị","Đang giao","Hoàn thành","Đã hủy"];
-orders=orders.map(o=>({status:STATUS[0],userId:null,...o}));
-const saveU=()=>{store.set("rs_users",users);store.set("rs_session",session)};
-const me=()=>users.find(u=>u.id===session)||null;
-const isAdmin=()=>me()?.role==="admin";
-async function hash(pw,salt){
-  const d=new TextEncoder().encode(salt+pw);
-  if(globalThis.crypto?.subtle){const b=await crypto.subtle.digest("SHA-256",d);return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
-  let x=5381;for(const c of salt+pw)x=((x<<5)+x+c.charCodeAt(0))>>>0;return"f"+x.toString(16);
-}
-const fld=(id,label,type="text",ex="")=>`<div class="field"><label for="a-${id}">${label}</label><input id="a-${id}" name="${id}" type="${type}" ${ex} required></div>`;
-const orderCard=(o,admin)=>`<div class="order"><div class="order-top"><strong>${esc(o.code)} · ${money(o.total)}</strong><span class="badge s${STATUS.indexOf(o.status)}">${esc(o.status)}</span></div><small>${new Date(o.createdAt).toLocaleString("vi-VN")}${admin?`<br>${esc(o.name)} · ${esc(o.phone)}<br>${esc(o.address)}`:""}${o.note?"<br>Ghi chú: "+esc(o.note):""}</small><ul>${(o.items||[]).map(i=>`<li>${esc(i.name)} × ${i.qty}</li>`).join("")}</ul>${admin?`<select data-status="${esc(o.code)}" aria-label="Trạng thái đơn ${esc(o.code)}">${STATUS.map(s=>`<option${s===o.status?" selected":""}>${s}</option>`).join("")}</select> <button class="icon" type="button" data-delord="${esc(o.code)}">Xóa</button>`:o.status===STATUS[0]?`<button class="icon" type="button" data-cancel="${esc(o.code)}">Hủy đơn</button>`:""}</div>`;
-
-function renderAdmin(){
-  $("#adminProducts").innerHTML=products.map(p=>`<div class="cart-row"><div><strong>${esc(p.name)}</strong><small>${money(p.price)}</small></div><div><button class="icon" type="button" data-edit="${p.id}">Sửa</button> <button class="icon" type="button" data-delete="${p.id}">Xóa</button></div></div>`).join("")||`<p class="empty">Chưa có sản phẩm.</p>`;
-  const fs=$("#orderFilter");if(!fs.options.length)fs.innerHTML=`<option value="">Tất cả</option>`+STATUS.map(s=>`<option>${s}</option>`).join("");
-  $("#orderStats").textContent=STATUS.map(s=>s+": "+orders.filter(o=>o.status===s).length).join(" · ");
-  const list=orders.filter(o=>!fs.value||o.status===fs.value);
-  $("#adminOrders").innerHTML=list.map(o=>orderCard(o,true)).join("")||`<p class="empty">Chưa có đơn hàng nào.</p>`;
-}
-function renderAcc(){
-  const u=me(),A=$("#authView"),C=$("#custView");
-  $("#authView").hidden=!!u;C.hidden=!u||u.role==="admin";$("#adminView").hidden=!isAdmin();
-  $("#accBtn").textContent=u?(u.role==="admin"?"Quản trị":u.name.split(" ").pop()):"Đăng nhập";
-  const setup=authMode==="admin"&&!users.some(x=>x.role==="admin");
-  $("#accTitle").textContent=u?(u.role==="admin"?"Quản trị":"Tài khoản của bạn"):setup?"Tạo tài khoản quản trị":authMode==="register"?"Tạo tài khoản":authMode==="admin"?"Đăng nhập quản trị":"Đăng nhập";
-  if(!u){
-    const tabs=authMode==="admin"?"":`<div class="tabs"><button class="filter" type="button" data-mode="login" aria-pressed="${authMode==="login"}">Đăng nhập</button><button class="filter" type="button" data-mode="register" aria-pressed="${authMode==="register"}">Đăng ký</button></div>`;
-    const reg=authMode==="register";
-    A.innerHTML=tabs+`<form id="authForm">${setup?`<p class="note">Chưa có tài khoản quản trị. Hãy tạo tài khoản đầu tiên cho cửa hàng.</p>`:""}${reg?fld("name","Họ và tên","text",'autocomplete="name"')+fld("phone","Số điện thoại","tel",'autocomplete="tel" pattern="(0|\\+84)[0-9]{9}" title="Ví dụ: 0912345678"'):""}${fld("email","Email","email",'autocomplete="email"')}${fld("password","Mật khẩu"+(reg?" (ít nhất 6 ký tự)":setup?" (ít nhất 8 ký tự)":""),"password",`autocomplete="${reg||setup?"new-password":"current-password"}"`)}<p class="err" id="authErr" role="alert"></p><button class="btn btn-block" type="submit">${setup?"Tạo tài khoản quản trị":reg?"Tạo tài khoản":"Đăng nhập"}</button></form>`;
-  }else if(u.role==="admin")renderAdmin();
-  else{const mine=orders.filter(o=>o.userId===u.id);C.innerHTML=`<p><strong>${esc(u.name)}</strong><br><span class="note">${esc(u.email)}${u.phone?" · "+esc(u.phone):""}</span></p><button class="icon" type="button" data-logout>Đăng xuất</button><h3>Đơn hàng của bạn</h3>${mine.map(o=>orderCard(o,false)).join("")||`<p class="empty">Bạn chưa có đơn nào. Hãy chọn một món quà từ bộ sưu tập.</p>`}`}
-}
-function openAcc(m){authMode=m;renderAcc();openOv("accOverlay")}
-function syncCheckout(){const u=me();$("#checkout").hidden=!u;$("#needLogin").hidden=!!u;if(u){const f=$("#checkout").elements;if(!f.name.value)f.name.value=u.name;if(!f.phone.value)f.phone.value=u.phone||""}}
-
-document.addEventListener("submit",async e=>{
-  if(e.target.id!=="authForm")return;e.preventDefault();
-  const f=e.target.elements,err=$("#authErr"),email=f.email.value.trim().toLowerCase(),pw=f.password.value;
-  const setup=authMode==="admin"&&!users.some(x=>x.role==="admin");
-  if(authMode==="register"||setup){
-    if(pw.length<(setup?8:6)){err.textContent=`Mật khẩu cần ít nhất ${setup?8:6} ký tự.`;return}
-    if(users.some(x=>x.email===email)){err.textContent="Email này đã có tài khoản. Hãy chuyển sang Đăng nhập.";return}
-    const salt=(globalThis.crypto?.randomUUID?.())||String(Math.random());
-    const u={id:Date.now(),name:setup?"Quản trị viên":f.name.value.trim(),phone:setup?"":f.phone.value.trim(),email,salt,hash:await hash(pw,salt),role:setup?"admin":"customer"};
-    users.push(u);session=u.id;
-  }else{
-    const u=users.find(x=>x.email===email);
-    if(!u||u.hash!==await hash(pw,u.salt)){err.textContent="Email hoặc mật khẩu chưa đúng.";return}
-    if(authMode==="admin"&&u.role!=="admin"){err.textContent="Tài khoản này không có quyền quản trị.";return}
-    session=u.id;
-  }
-  saveU();renderAcc();toast("Đã đăng nhập.");
-});
-document.addEventListener("click",e=>{
-  const t=e.target,m=t.closest("[data-mode]");
-  if(m){authMode=m.dataset.mode;renderAcc();return}
-  if(t.closest("[data-logout]")){session=null;authMode="login";saveU();renderAcc();toast("Đã đăng xuất.");return}
-  const c=t.closest("[data-cancel]");
-  if(c){const o=orders.find(o=>o.code===c.dataset.cancel&&o.userId===session&&o.status===STATUS[0]);if(o&&confirm("Hủy đơn "+o.code+"?")){o.status="Đã hủy";save();renderAcc();toast("Đã hủy đơn.")}return}
-  const d=t.closest("[data-delord]");
-  if(d&&isAdmin()&&confirm("Xóa đơn "+d.dataset.delord+"?")){orders=orders.filter(o=>o.code!==d.dataset.delord);save();renderAdmin();toast("Đã xóa đơn.")}
-});
-document.addEventListener("change",e=>{
-  if(e.target.id==="orderFilter"){renderAdmin();return}
-  const s=e.target.closest("[data-status]");
-  if(s&&isAdmin()){const o=orders.find(o=>o.code===s.dataset.status);if(o){o.status=s.value;o.updatedAt=new Date().toISOString();save();renderAdmin();toast("Đã cập nhật trạng thái.")}}
-});
 
 /* Hộp thoại: mở/đóng, phím Esc, trả lại focus */
 let lastFocus=null;
 function openOv(id){lastFocus=document.activeElement;const o=$("#"+id);o.hidden=false;document.body.style.overflow="hidden";o.querySelector(".drawer").focus()}
 function closeOv(o){o.hidden=true;document.body.style.overflow="";lastFocus?.focus()}
-function resetEdit(){const f=$("#productForm");f.reset();f.elements.id.value="";$("#formTitle").textContent="Thêm sản phẩm";$("#cancelEdit").hidden=true}
 
 document.addEventListener("click",e=>{
-  const t=e.target;
-  const f=t.closest("[data-filter]");if(f){filter=f.dataset.filter;renderProducts();return}
-  const a=t.closest("[data-add]");if(a){const id=Number(a.dataset.add),x=cart.find(x=>x.id===id);x?x.qty++:cart.push({id,qty:1});save();renderCart();toast("Đã thêm vào giỏ hàng.");return}
-  const q=t.closest("[data-qty]");if(q){const x=cart.find(x=>x.id===Number(q.dataset.qty));if(x)x.qty+=Number(q.dataset.delta);cart=cart.filter(x=>x.qty>0);save();renderCart();return}
-  const d=t.closest("[data-delete]");if(d&&isAdmin()){
-    const p=products.find(p=>p.id===Number(d.dataset.delete));
-    if(!p||!confirm(`Xóa sản phẩm "${p.name}"?`))return;
-    products=products.filter(x=>x.id!==p.id);cart=cart.filter(x=>x.id!==p.id);
-    save();renderProducts();renderCart();renderAdmin();toast("Đã xóa sản phẩm.");return}
-  const ed=t.closest("[data-edit]");if(ed){
-    const p=products.find(p=>p.id===Number(ed.dataset.edit)),form=$("#productForm");
-    Object.keys(p).forEach(k=>{if(form.elements[k])form.elements[k].value=p[k]});
-    $("#formTitle").textContent="Chỉnh sửa: "+p.name;$("#cancelEdit").hidden=false;form.scrollIntoView({behavior:"smooth"});return}
-  if(t.closest("[data-close]")||t.classList.contains("overlay"))closeOv(t.closest(".overlay"));
-  if(t.closest("#navlinks a")){$("#navlinks").classList.remove("open");$("#menuBtn").setAttribute("aria-expanded","false")}
+ const t=e.target;
+ const f=t.closest("[data-filter]");if(f){filter=f.dataset.filter;renderProducts();return}
+ if(t.closest("#navlinks a")){$("#navlinks").classList.remove("open");$("#menuBtn").setAttribute("aria-expanded","false")}
 });
 document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".overlay:not([hidden])").forEach(closeOv)});
 
-$("#cartBtn").onclick=()=>{$("#done").hidden=true;syncCheckout();renderCart();openOv("cartOverlay")};
-$("#accBtn").onclick=()=>openAcc("login");
-$("#goLogin").onclick=()=>{closeOv($("#cartOverlay"));openAcc("login")};
-$("#adminBtn").onclick=()=>openAcc("admin");
 $("#menuBtn").onclick=e=>{const open=$("#navlinks").classList.toggle("open");e.currentTarget.setAttribute("aria-expanded",open)};
-$("#cancelEdit").onclick=resetEdit;
-if(location.hash==="#admin")openAcc("admin");
-
-/* Gửi đơn qua Messenger của fanpage */
-const PAGE_MSG="https://m.me/Rice.and.Soul";
-const orderText=o=>`ĐƠN HÀNG ${o.code}\nKhách: ${o.name}\nSĐT: ${o.phone}\nĐịa chỉ: ${o.address}\n`+o.items.map(i=>`- ${i.name} × ${i.qty} = ${money(i.price*i.qty)}`).join("\n")+`\nTổng: ${money(o.total)}`+(o.note?`\nGhi chú: ${o.note}`:"");
-$("#sendMsg").onclick=async()=>{
-  const ta=$("#orderText");let ok=false;
-  try{await navigator.clipboard.writeText(ta.value);ok=true}catch{ta.select();try{ok=document.execCommand("copy")}catch{}}
-  toast(ok?"Đã sao chép đơn. Hãy dán vào khung chat rồi bấm gửi.":"Chưa tự sao chép được. Hãy chép nội dung đơn bên dưới.");
-  window.open(PAGE_MSG,"_blank","noopener");
-};
-
-/* Đặt hàng */
-$("#checkout").onsubmit=e=>{
-  e.preventDefault();
-  const u=me();if(!u){syncCheckout();return toast("Hãy đăng nhập để đặt hàng.")}
-  if(!cart.length)return toast("Giỏ hàng đang trống.");
-  const fd=new FormData(e.target),code="RS-"+Date.now().toString().slice(-6);
-  const items=cart.map(x=>{const p=products.find(p=>p.id===x.id);return{id:x.id,name:p?.name||"",price:p?.price||0,qty:x.qty}});
-  orders.unshift({code,userId:u.id,status:STATUS[0],name:fd.get("name").trim(),phone:fd.get("phone").trim(),address:fd.get("address").trim(),note:fd.get("note").trim(),total:cartTotal(),items,createdAt:new Date().toISOString()});
-  cart=[];save();renderCart();e.target.reset();renderAcc();$("#orderText").value=orderText(orders[0]);
-  $("#orderCode").textContent=code;e.target.hidden=true;$("#done").hidden=false;
-};
-
-/* Quản lý sản phẩm */
-$("#productForm").onsubmit=e=>{
-  e.preventDefault();if(!isAdmin())return;
-  const f=e.target,id=Number(f.elements.id.value);
-  const p={id:id||Date.now(),name:f.elements.name.value.trim(),price:Number(f.elements.price.value),category:f.elements.category.value,symbol:f.elements.symbol.value.trim()||"✳",description:f.elements.description.value.trim()};
-  products=id?products.map(x=>x.id===id?p:x):[...products,p];
-  save();resetEdit();renderProducts();renderCart();renderAdmin();toast("Đã lưu sản phẩm.");
-};
 
 /* Màn chào: chỉ hiện một lần mỗi phiên */
 const FALLBACK=["Mong bạn luôn tìm thấy một khoảng trời bình yên, ngay cả trong những ngày nhiều mây nhất.","Chúc bạn đủ dịu dàng với bản thân và đủ can đảm để bắt đầu lại.","Đôi khi, những điều nhỏ bé lại giữ trong mình sức mạnh lớn lao."];
@@ -574,9 +400,9 @@ function closeSplash(){
 $("#enter").onclick=closeSplash;
 
 let seen=false;try{seen=sessionStorage.getItem("rs_seen")==="1"}catch{}
-if(seen||location.hash==="#admin")$("#splash").remove();
+if(seen)$("#splash").remove();
 else{document.body.style.overflow="hidden";loadGift();$("#enter").focus()}
-renderProducts();renderCart();renderAcc();
+renderProducts();
 </script>
 </body>
 </html>
