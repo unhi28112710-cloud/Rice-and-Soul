@@ -373,6 +373,33 @@ footer{background:var(--butter);padding:64px 0 26px;border-top:2px solid var(--i
 @keyframes glow{50%{box-shadow:0 4px 0 var(--ink),0 0 0 8px #f3c64b55}}
 @media(prefers-reduced-motion:reduce){#giftMessage span{opacity:1!important;transform:none!important}.sp-grains{display:none}}
 @media(max-width:560px){.gift{padding-top:64px}.gift .btn{width:100%}}
+
+.order-note{display:inline-block;margin:16px 0 0!important;padding:8px 18px;border:2px solid var(--ink);border-radius:999px;background:var(--butter);color:var(--ink)!important;font-size:15px!important;max-width:none!important}
+.order-note a{font-weight:600;text-underline-offset:3px}
+.product-bottom{justify-content:flex-start}
+.product-bottom .add{width:100%;text-align:center;padding:8px 14px}
+
+/* ===== Hòa lại bảng màu: dịu hơn, bớt tương phản gắt ===== */
+:root{--muted:#4f5c46}
+.statement{background:linear-gradient(180deg,#fdefba 0%,#f8dd8a 100%)}
+.pane:not(.on):after{background:linear-gradient(0deg,#2f6a1ccc 0,#2f6a1c40 100%)}
+.pane:after{background:linear-gradient(0deg,#2a4a1ccc 0,#2a4a1c00 58%)}
+.pane:not(.on) .ph{filter:saturate(1.15)}
+.saga{background:linear-gradient(180deg,#f1f6dd 0%,#e3edc2 100%);color:var(--ink)}
+.saga .eyebrow{color:var(--leaf-d)}
+.saga h2 em{color:var(--leaf)}
+.saga .lead{color:var(--muted)}
+.stat{background:var(--white);box-shadow:0 6px 0 var(--ink)}
+.stat:nth-child(odd){background:var(--butter)}
+.stat b{color:var(--leaf-d)}
+.chap{background:var(--white);border:2px solid var(--ink);box-shadow:0 5px 0 var(--ink)}
+.chap i{color:#f3c64b80}
+.chap p{color:var(--muted)}
+.chap cite{color:var(--muted)}
+.chap cite a{color:var(--leaf-d)}
+.saga-tip{color:var(--leaf-d)}
+.st{background:linear-gradient(#9cc95a,#4a8f2e)}
+.field:after{background:var(--leaf-d)}
 </style>
 </head>
 <body>
@@ -507,7 +534,7 @@ footer{background:var(--butter);padding:64px 0 26px;border-top:2px solid var(--i
 
 <section class="collection" id="collection">
   <div class="wrap">
-    <div class="head"><h2>Móc khóa hạt gạo</h2><p>Mỗi chiếc là một lát cắt nhỏ của ký ức Việt, làm thủ công từ hạt gạo thật.</p></div>
+    <div class="head"><h2>Móc khóa hạt gạo</h2><p>Mỗi chiếc là một lát cắt nhỏ của ký ức Việt, làm thủ công từ hạt gạo thật.</p><p class="order-note">Giá và đặt hàng qua <a href="https://www.facebook.com/Rice.and.Soul/" target="_blank" rel="noopener noreferrer">Fanpage Rice &amp; Soul</a>: nhắn mẫu bạn thích, chúng tôi tư vấn và báo giá ngay.</p></div>
     <div class="filters" id="filters" role="group" aria-label="Lọc theo danh mục"></div>
     <div id="feature"></div>
     <div class="grid" id="products"></div>
@@ -518,7 +545,7 @@ footer{background:var(--butter);padding:64px 0 26px;border-top:2px solid var(--i
   <div class="wrap perks-grid">
     <div class="perk"><h3>Thủ công từng hạt</h3><p>Mỗi hạt gạo được chọn lọc, khắc hoặc vẽ và hoàn thiện bằng tay.</p></div>
     <div class="perk"><h3>Phủ lớp bảo vệ trong suốt</h3><p>Giữ nguyên hình khắc để bạn mang theo lâu dài mỗi ngày.</p></div>
-    <div class="perk"><h3>Đặt thiết kế riêng</h3><p>Gửi ý tưởng của bạn, chúng tôi gửi nó vào hạt gạo. <a href="mailto:hello@riceandsoul.vn?subject=Đặt thiết kế riêng">Liên hệ ngay</a></p></div>
+    <div class="perk"><h3>Đặt thiết kế riêng</h3><p>Gửi ý tưởng của bạn, chúng tôi gửi nó vào hạt gạo. <a href="https://www.facebook.com/Rice.and.Soul/?subject=Đặt thiết kế riêng">Liên hệ ngay</a></p></div>
   </div>
 </section>
 
@@ -630,11 +657,11 @@ function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");cl
 /* Hiển thị sản phẩm. Ảnh sản phẩm: images/sp-<id>.jpg (hoặc trường image nếu có) */
 function card(p){
   const img=esc(p.image||"images/sp-"+p.id+".jpg");
-  return `<article class="product"><div class="visual"><div class="grain" aria-hidden="true"><span>${esc(p.symbol||"✳")}</span></div><img src="${img}" alt="${esc(p.name)}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.remove()"></div><div class="product-info"><h3>${esc(p.name)}</h3><p>${esc(p.description||"Món quà thủ công từ Rice & Soul.")}</p><div class="product-bottom"><span class="price">${money(p.price)}</span><a class="add" href="https://www.facebook.com/Rice.and.Soul/" target="_blank" rel="noopener noreferrer">Liên hệ mua</a></div></div></article>`;
+  return `<article class="product"><div class="visual"><div class="grain" aria-hidden="true"><span>${esc(p.symbol||"✳")}</span></div><img src="${img}" alt="${esc(p.name)}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.remove()"></div><div class="product-info"><h3>${esc(p.name)}</h3><p>${esc(p.description||"Món quà thủ công từ Rice & Soul.")}</p><div class="product-bottom"><a class="add" href="https://www.facebook.com/Rice.and.Soul/" target="_blank" rel="noopener noreferrer" aria-label="Nhắn fanpage đặt mẫu ${esc(p.name)}">Nhắn fanpage đặt mẫu →</a></div></div></article>`;
 }
 function featureCard(p){
   const img=esc(p.image||"images/sp-"+p.id+".jpg");
-  return `<article class="feature"><div class="visual"><div class="grain" aria-hidden="true"><span>${esc(p.symbol||"✳")}</span></div><img src="${img}" alt="${esc(p.name)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.remove()"></div><div class="feature-info"><span class="pill">Mẫu nổi bật · ${esc(p.category)}</span><h3>${esc(p.name)}</h3><p>${esc(p.description||"")}</p><span class="price">${money(p.price)}</span><a class="btn" href="https://www.facebook.com/Rice.and.Soul/" target="_blank" rel="noopener noreferrer">Liên hệ mua</a></div></article>`;
+  return `<article class="feature"><div class="visual"><div class="grain" aria-hidden="true"><span>${esc(p.symbol||"✳")}</span></div><img src="${img}" alt="${esc(p.name)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.remove()"></div><div class="feature-info"><span class="pill">Mẫu nổi bật · ${esc(p.category)}</span><h3>${esc(p.name)}</h3><p>${esc(p.description||"")}</p><a class="btn" href="https://www.facebook.com/Rice.and.Soul/" target="_blank" rel="noopener noreferrer" aria-label="Nhắn fanpage đặt mẫu ${esc(p.name)}">Nhắn fanpage để đặt</a></div></article>`;
 }
 function renderProducts(){
   const cats=["Tất cả",...new Set(products.map(p=>p.category))];
